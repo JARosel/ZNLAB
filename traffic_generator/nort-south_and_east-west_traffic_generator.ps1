@@ -110,6 +110,9 @@ for ($i = 1; $i -le $Iterations; $i++) {
 
         # RDP
         Test-TcpPort -Target $WinVM -Port 3389
+
+        # SSH
+        Test-TcpPort -Target $WinVM -Port 22
     }
 
     Write-Host "EAST-WEST: Acceso SMB real" -ForegroundColor Yellow
