@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  wp-traffic-generator:
+    build: .
+    container_name: wp_traffic_generator
+    environment:
+      - WP_URL=${WP_URL}
+      - WP_USER=${WP_USER}
+      - WP_PASSWORD=${WP_PASSWORD}
+      - TRAFFIC_INTERVAL=${TRAFFIC_INTERVAL:-60}
+      - POST_INTERVAL=${POST_INTERVAL:-300}
+    restart: unless-stopped
